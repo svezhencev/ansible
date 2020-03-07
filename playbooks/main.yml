@@ -1,0 +1,15 @@
+- hosts: all
+  vars_files:
+    - ../vars/nginx.yml
+    - ../vars/mysql.yml
+    - ../vars/php.yml
+    - ../vars/app.yml
+  roles:
+    - { role: robertdebock.selinux, vars: { selinux_state: disabled } }
+    - { role: geerlingguy.repo-remi }
+    - { role: nginxinc.nginx }
+    - { role: geerlingguy.repo-epel }
+    - { role: geerlingguy.git }
+    - { role: itsumma.percona }
+    - { role: weareinteractive.users }
+    - { role: geerlingguy.php }

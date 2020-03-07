@@ -1,0 +1,7 @@
+.venv
+.vagrant
+.vscode/
+vendor
+keys
+tmp/
+playbooks/main.retry
